@@ -1,0 +1,53 @@
+﻿#法令
+l_simp_chinese:
+
+ #edict_: ""
+ #edict__desc: ""
+
+ edict_SVE_ultimatepenetration: "§M终极穿透性手段§!"
+ edict_SVE_ultimatepenetration_desc: "面对§T1190%§!、§T2550%§!、§T2640%§!甚至更高硬化的叹息之墙，这或许是最后的办法，§R不论代价如何……§!"
+
+ edict_SVE_Belli_dura_despicio: "§Y神射手§!"
+ edict_SVE_Belli_dura_despicio_desc: "§YBelli dura despicio!§!"
+
+ edict_SVE_381warning: "§P381警告§!"
+ edict_SVE_381warning_desc: "意式设计，震撼人心"
+
+ edict_SVE_seapower_logistics: "海权：§S注重后勤§!"
+ edict_SVE_seapower_logistics_desc: "战争胜负往往取决于后勤。记得为航母编队规划好加油时间。"
+
+ edict_SVE_seapower_flexbility: "海权：§S灵活舰队§!"
+ edict_SVE_seapower_flexbility_desc: "选择战场者，往往已赢得半场胜利。"
+
+ edict_SVE_seapower_immunity_zone: "海权：§S免疫理论§!"
+ edict_SVE_seapower_immunity_zone_desc: "只要航速支持，最高效的战斗方式是保持在敌方射程外开火。"
+
+ edict_SVE_seapower_system_warfare: "海权：§S体系作战§!"
+ edict_SVE_seapower_system_warfare_desc: "始终保持战争理论的领先才能带来更先进的体系化优势。"
+
+ edict_SVE_seapower_infinity_fleet: "海权：§H百年海军§!"
+ edict_SVE_seapower_infinity_fleet_desc: "海军的建设需要持之以恒的投入，在海军建设上省下的投入迟早会变为战争赔款。"
+
+ edict_SVE_shimakaze17900: "野望：§E第一滴血§!"
+ edict_SVE_shimakaze17900_desc: "将大量§B隐身鱼雷艇§!开到敌方脸上、同时解除隐形并开火。虽然极度礼崩乐坏，但对于缺乏探测手段的敌人来说却极为有效，尤其是面对常规舰队无法抗衡的超级单体时。如果更§R极端§!一点呢？"
+
+ edict_SVE_high_caliber: "野望：§E重创§!"
+ edict_SVE_high_caliber_desc: "堡堡巴逝~ 有时候光是中小口径的武器就能灌死敌人。"
+
+ edict_SVE_devastating_strike: "野望：§E毁灭打击§!"
+ edict_SVE_devastating_strike_desc: "长门你都怕的吗？不就一VII级铁王八？"
+
+ edict_SVE_noob_cv_fk_me: "野望：§E对空防御专家§!"
+ edict_SVE_noob_cv_fk_me_desc: "...... CV并没有回复你的白字。可能是忙着玩飞机也可能是屏蔽了聊天框。"
+
+ edict_SVE_pushing_and_flanking: "§S冲锋与拉侧§!"
+ edict_SVE_pushing_and_flanking_desc: "施里芬，启动！无比，启动！自由，启动！"
+
+ edict_SVE_kiting_and_slinging: "§S拖刀与抛屎§!"
+ edict_SVE_kiting_and_slinging_desc: "征服者，启动！雷神，启动！梅克伦堡，启动！"
+
+ edict_SVE_dragon_sniper: "§S龙拳§!"
+ edict_SVE_dragon_sniper_desc: "§E我方战列舰已取得制空权！§!"
+
+ edict_SVE_french_march: "§S法式前进§!"
+ edict_SVE_french_march_desc: "法式超跑，进退自如！"

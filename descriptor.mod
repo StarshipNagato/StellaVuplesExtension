@@ -1,0 +1,9 @@
+version="v0.1"
+tags={
+	"Balance"
+	"Economy"
+	"Gameplay"
+	"Military"
+}
+name="StellaVuplesExtension"
+supported_version="v4.3.7"

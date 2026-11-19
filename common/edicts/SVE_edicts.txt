@@ -1,0 +1,600 @@
+#法令
+#@EdictPerpetual = -1，原版定义过的开启直到取消的持续时间。虽然不知道直接写-1是不是更短，但能跑就不要动还是先照抄吧。
+@EdictPerpetual = -1
+
+SVE_ultimatepenetration = {
+	#终极穿透性手段
+	#持续120天（4个月），到期自动关闭
+	#length = 120
+	#持续时间：持续直到取消
+	length = @EdictPerpetual
+	#原版法令图标，就是那个法槌
+	icon = GFX_edict_type_SVE_ultimatepenetration
+	#AI选择权重
+	ai_weight = {
+		weight = 0
+	}
+	# 显示条件（法令是否在列表中出现）
+	potential = {
+		#OR = 条件二选一
+		#OR = {
+		#有穿透性手段的国民理念
+		#has_civic = civic_SVE_penetrate
+		#或者满足如下条件也可以出现
+		#AND = {
+		#不是格式塔
+		is_gestalt = no
+		#不是唯心主义
+		NOT = {
+			has_ethic = ethic_spiritualist
+		}
+		#不是极端唯心主义
+		NOT = {
+			has_ethic = ethic_fanatic_spiritualist
+		}
+		#没有国民理念：寻乐者
+		NOT = {
+			has_civic = civic_pleasure_seekers
+		}
+		#没有国民理念：企业享乐主义
+		NOT = {
+			has_civic = civic_corporate_hedonism
+		}
+		#没有国民理念：压迫性独裁
+		NOT = {
+			has_civic = civic_oppressive_autocracy
+		}
+		#}
+		#}
+	}
+	#所需资源
+	resources = {
+		#花费项目：法令
+		category = edicts
+		#激活花费
+		cost = {
+			#开启花费100影响力
+			influence = 100
+			#开启花费1000稀有文物
+			minor_artifacts = 1000
+		}
+		#每月维护费
+		upkeep = {
+			#法令每月维护费1939凝聚力
+			unity = 1939
+			#花费随帝国规模增长
+			#multiplier = value:edict_size_effect
+			#法令每月维护费324活体金属
+			sr_living_metal = 324
+			#法令每月维护费324纳米机器人
+			nanites = 324
+		}
+	}
+	modifier = {
+		ship_shield_penetration_add = 11.9		#+1190%护盾穿透
+		#damage_vs_shield = 3.24		#+324%对护盾伤害
+		ship_armor_penetration_add = 11.9		#+1190%装甲穿透
+		#damage_vs_armor = 3.24		#+324%对装甲伤害
+		#damage_vs_hull = 3.24		#+324%对船体伤害
+		ship_weapon_damage = 3.24		#舰船武器伤害+324%
+		all_technology_research_speed = -4.1		#研究速度-410%
+		planet_jobs_produces_mult = -0.5		#全岗位产出-50%
+	}
+	#检查是否符合激活条件。资源条件会在resources里自动检查，allow一般用于非资源的条件检查："allow determines can this edict be activated"
+	#allow = {
+	#	custom_tooltip = {
+	#		fail_text = "需要100影响力"
+	#		resources = {
+	#			influence >= 100
+	#		}
+	#		fail_text = "需要1000稀有文物"
+	#		technoledge = {
+	#		}
+	#	}
+	#}
+}
+
+SVE_Belli_dura_despicio = {
+	#神射手
+	length = @EdictPerpetual
+	icon = GFX_edict_type_SVE_Belli_dura_despicio
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			minor_artifacts = 1913
+			unity = 1126
+		}
+		upkeep = {
+			minor_artifacts = 125
+			unity = 3500
+		}
+	}
+	modifier = {
+		ship_starting_experience_add = 3000		#舰船初始经验+3000
+		ship_weapon_range_mult = 0.5		#舰船武器射程+50%
+		ship_weapon_damage = 3
+		ship_accuracy_add = 2		#命中率+2
+		weapon_role_artillery_weapon_damage_mult = 3		#炮击伤害+300%
+		t_slot_weapon_damage_mult = 3		#T槽武器伤害+300%
+		x_slot_weapon_damage_mult = 3		#X槽武器伤害+300%
+		l_slot_weapon_damage_mult = 3		#L槽武器伤害+300%
+		ship_orbital_bombardment_mult = 1 		#轨道轰炸(进攻)伤害+100%
+		ship_orbital_bombardment_army_damage_mult = 1		#轨道轰炸对陆军伤害+100%
+		country_war_exhaustion_mult = -1		#厌战度获得-100%
+		country_alloys_produces_mult = -0.12		#全国合金产出-12%
+	}
+}
+
+SVE_381warning = {
+	#381警告
+	length = @EdictPerpetual
+	icon = GFX_edict_type_SVE_381warning
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			minor_artifacts = 1937
+			unity = 725
+		}
+		upkeep = {
+			minor_artifacts = 110
+			unity = 1300
+		}
+	}
+	modifier = {
+		ship_weapon_range_mult = 0.5
+		ship_weapon_damage = 2
+		ship_accuracy_add = -6
+		weapon_role_artillery_weapon_damage_mult = 2.7
+		weapon_type_point_defense_weapon_damage_mult = 0.1		#点防御武器伤害+10%
+		t_slot_weapon_damage_mult = 1
+		x_slot_weapon_damage_mult = 1
+		l_slot_weapon_damage_mult = 1
+		planet_orbital_bombardment_damage = -0.5		#轨道轰炸(防御)伤害-50%
+	}
+}
+
+SVE_seapower_logistics = {
+	#海权：注重后勤
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	potential = {
+		OR = {
+			has_civic = civic_distinguished_admiralty
+			AND = {
+				has_civic = civic_SVE_galaxyseapower
+			}
+		}
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 10000
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 10000
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		ships_upkeep_mult = -0.5		#舰船维护费-50%
+		ship_orbit_upkeep_mult = -0.5		#驻港舰船维护费-50%
+		starbases_upkeep_mult = -0.5		#恒星基地维护费-50%
+	}
+}
+
+SVE_seapower_flexbility = {
+	#海权：灵活舰队
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	potential = {
+		OR = {
+			has_civic = civic_distinguished_admiralty
+			AND = {
+				has_civic = civic_SVE_galaxyseapower
+			}
+		}
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 10000
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 10000
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		ship_speed_mult = 1		#亚光速航速+100%
+		ship_evasion_add = 2		#闪避率+2
+		ship_disengage_chance_mult = 1		#战斗撤离几率+100%
+		ship_disengage_opportunities_add = 1		#撤退机会+1
+	}
+}
+
+SVE_seapower_immunity_zone = {
+	#海权：免疫理论
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	potential = {
+		OR = {
+			has_civic = civic_distinguished_admiralty
+			AND = {
+				has_civic = civic_SVE_galaxyseapower
+			}
+		}
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 10000
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 10000
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		ship_speed_mult = 0.5
+		ship_weapon_range_mult = 0.5
+		ship_engagement_range_mult = 0.5		#舰船交战范围+50%
+		t_slot_weapon_damage_mult = 0.5
+		x_slot_weapon_damage_mult = 0.5
+		l_slot_weapon_damage_mult = 0.5
+		ship_hull_mult = 0.5		#舰船船体值+50%
+		shipclass_starbase_hull_mult = 0.5		#恒星基地船体值+50%
+	}
+}
+
+SVE_seapower_system_warfare = {
+	#海权：体系作战
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	potential = {
+		OR = {
+			has_civic = civic_distinguished_admiralty
+			AND = {
+				has_civic = civic_SVE_galaxyseapower
+			}
+		}
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 10000
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 10000
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		ship_weapon_damage = 0.5
+		commander_exp_gain = 0.25		#指挥官经验获得+25%
+		commander_initial_skill = 1		#指挥官起始技能等级+1
+	}
+}
+
+SVE_seapower_infinity_fleet = {
+	#海权：百年海军
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		AND = {
+			has_edict = SVE_seapower_logistics
+			has_edict = SVE_seapower_flexbility
+			has_edict = SVE_seapower_immunity_zone
+			has_edict = SVE_seapower_system_warfare
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+	potential = {
+		always = yes
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 50000
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 10000
+			unity = 10000
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		ship_fire_rate_mult = 0.5		#舰船武器射速+50%
+		ship_starting_experience_add = 1000
+		country_naval_cap_mult = 0.5		#海军容量+50%
+		command_limit_add = 800		#舰队指挥上限+800
+		country_leader_cap_add = 1		#领袖上限+1
+		commander_exp_gain = 0.25
+	}
+}
+
+SVE_shimakaze17900 = {
+	#野望：第一滴血
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			influence = 100
+			#开启花费1000暗物质
+			sr_dark_matter = 1000
+			# 开启花费随帝国规模增长
+			#multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = 17900
+			#法令每月维护费17900易爆微粒
+			volatile_motes = 17900
+		}
+	}
+	modifier = {
+		ship_speed_mult = 0.08
+		ship_weapon_damage = 0.1
+		weapon_type_explosive_weapon_damage_mult = 6.1		#爆炸武器伤害+610%
+		weapon_type_explosive_weapon_fire_rate_mult = 0.35		#爆炸武器射速+35%
+		weapon_type_point_defense_weapon_fire_rate_mult = 0.35		##点防御武器射速+35%
+		s_slot_weapon_damage_mult = 0.06		#S槽武器伤害+6%
+	}
+}
+
+SVE_high_caliber = {
+	#野望：重创
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			influence = 100
+			sr_dark_matter = 1000
+		}
+		upkeep = {
+			unity = 10000
+			#法令每月维护费20300异星天然气
+			exotic_gases = 20300
+		}
+	}
+	modifier = {
+		ship_weapon_damage = 0.15
+		weapon_role_artillery_weapon_damage_mult = 2.03
+		m_slot_weapon_damage_mult = 2.03		#M槽武器伤害+203%
+		m_slot_weapon_fire_rate_mult = 2.03		#M槽武器射速+203%
+		s_slot_weapon_damage_mult = 1.27
+		s_slot_weapon_fire_rate_mult = 1.27		#S槽武器射速+127%
+	}
+}
+
+SVE_devastating_strike = {
+	#野望：毁灭打击
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			influence = 100
+			sr_dark_matter = 1919
+		}
+		upkeep = {
+			unity = 1919
+			#法令每月维护费41000稀有水晶
+			rare_crystals = 41000
+		}
+	}
+	modifier = {
+		ship_weapon_damage = 0.9
+		weapon_role_artillery_weapon_damage_mult = 4.1
+		t_slot_weapon_damage_mult = 4.1
+		x_slot_weapon_damage_mult = 4.1
+		l_slot_weapon_damage_mult = 4.1
+	}
+}
+
+SVE_noob_cv_fk_me = {
+	#野望：对空防御专家
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			influence = 100
+			#开启花费1000纳米机器人
+			nanites = 1000
+		}
+		upkeep = {
+			unity = 26400
+			sr_living_metal = 1000
+			nanites = 100
+		}
+	}
+	modifier = {
+		ship_engagement_range_mult = 1
+		weapon_type_point_defense_weapon_damage_mult = 5
+		weapon_type_point_defense_weapon_fire_rate_mult = 3		#点防御武器射速+300%
+		weapon_type_strike_craft_speed_mult = 3		#舰载机速度+300%
+		weapon_type_strike_craft_weapon_damage_mult = 5		#舰载机伤害+500%
+		weapon_type_strike_craft_weapon_fire_rate_mult = 3		#舰载机开火速率+300%
+	}
+}
+
+SVE_pushing_and_flanking = {
+	#冲锋与拉侧
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 2400
+		}
+		upkeep = {
+			unity = 2400
+		}
+	}
+	modifier = {
+		ship_accuracy_add = 4
+		ship_armor_penetration_add = 0.5		#+50%装甲穿透
+		country_war_exhaustion_mult = -0.1		#厌战度获得-10%
+		ship_speed_mult = 0.2
+		ship_weapon_damage = 3
+		weapon_type_explosive_weapon_damage_mult = 1
+	}
+}
+
+SVE_kiting_and_slinging = {
+	#拖刀与抛屎
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 2400
+		}
+		upkeep = {
+			unity = 2400
+		}
+	}
+	modifier = {
+		ship_engagement_range_mult = 0.2
+		ship_weapon_range_mult = 0.2
+		ship_evasion_add = 4
+		ship_disengage_chance_mult = 1
+		ship_disengage_opportunities_add = 1
+		ship_emergency_ftl_min_days_mult = -0.5		#紧急超光速脱离冷却-50%
+		ship_armor_hardening_add = 0.5		#舰船装甲硬化+50%
+		country_war_exhaustion_mult = -0.1
+		ship_speed_mult = 0.2
+	}
+}
+
+SVE_dragon_sniper = {
+	#龙拳
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 2400
+		}
+		upkeep = {
+			unity = 2400
+		}
+	}
+	modifier = {
+		ship_engagement_range_mult = 3
+		ship_weapon_range_mult = 2
+	}
+}
+
+SVE_french_march = {
+	#法式前进
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+		factor = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+			unity = 2400
+		}
+		upkeep = {
+			unity = 2400
+		}
+	}
+	modifier = {
+		ship_evasion_add = 6
+		ship_disengage_chance_mult = 3
+		ship_disengage_opportunities_add = 1
+		ship_speed_mult = 0.5
+	}
+}

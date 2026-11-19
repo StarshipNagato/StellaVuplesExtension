@@ -1,0 +1,184 @@
+#国民理念
+civic_SVE_multicivic = {
+	#复合理念
+	#效果：实用建筑：免除区划特化所需的科技需求
+	description = civic_functional_architecture_effects
+	#总是显示
+	potential = {
+		always = yes
+	}
+	#随机国家选择权重
+	random_weight = {
+		base = 0
+	}
+	#AI选择权重
+	ai_weight = {
+		factor = 0
+	}
+	modifier = {
+		country_government_civic_points_add = 6		#额外国民理念点数+6
+		country_resource_max_add = 324000		#资源储存上限+324K
+		country_resource_max_minor_artifacts_add = 4100		#稀有文物容量+4100
+		country_war_exhaustion_mult = -0.5		#厌战度获得-50%
+		empire_size_mult = -0.2		#帝国规模-20%
+	}
+}
+
+civic_SVE_spaceengineers = {
+	#太空工程思维
+	#效果：拾荒者：可以从残骸里打捞科技和合金
+	description = civic_scavengers_effects
+	potential = {
+		always = yes
+	}
+	possible = {
+		#不是唯心主义
+		NOT = {
+			has_ethic = ethic_spiritualist
+		}
+		#不是极端唯心主义
+		NOT = {
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+	random_weight = {
+		base = 0
+	}
+	ai_weight = {
+		factor = 0
+	}
+	modifier = {
+		country_resource_max_add = 324000
+		ships_upkeep_mult = -0.5		#舰船维护费-50%
+		starbase_shipyard_build_speed_mult = 1		#舰船建造速度+100%
+		ship_starting_experience_add = 1000		#舰船初始经验+1000
+		ship_hull_mult = 0.5		#舰船船体值+50%
+		ship_armor_mult = 0.5		#舰船装甲值+50%
+		ship_hull_regen_add_perc = 0.15		#每日船体再生+15%
+		ship_armor_hardening_add = 0.5		#舰船装甲硬化+50%
+		ship_armor_regen_add_perc = 0.3		#每日装甲再生+30%
+		ship_shield_hardening_add = 0.1		#舰船护盾硬化+10%
+		country_naval_cap_mult = 0.5		#海军容量+50%
+		mod_ship_naval_cap_usage_mult = -0.5		#舰船占用的海军容量-50%
+		command_limit_mult = 1		#舰队指挥上限+100%
+		country_megastructure_build_cap_add = 3		#巨型结构建造上限+3
+		megastructure_build_speed_mult = 2		#巨构建造速度+200%
+		planet_building_build_speed_mult = 1		#行星建造速度+100%
+		ship_orbital_bombardment_mult = 1		#轨道轰炸伤害+100%
+		pop_ethic_materialist_attraction_mult = 0.3		#唯物主义吸引力+30%
+		country_engineering_tech_research_speed = 0.2		#研究速度(工程学)+25%
+		all_technology_research_speed = 0.25		#研究速度+25%
+		leaders_upkeep_mult = 0.25		#领袖维护费+25%
+	}
+}
+
+civic_SVE_galaxyseapower = {
+	#星海舰队理论
+	potential = {
+		always = yes
+	}
+	random_weight = {
+		base = 0
+	}
+	ai_weight = {
+		factor = 0
+	}
+	modifier = {
+		country_resource_max_add = 324000
+		starbase_shipyard_build_speed_mult = 1
+		ship_starting_experience_add = 1000
+		country_naval_cap_mult = 0.5
+		command_limit_add = 200		#舰队指挥上限+200
+		ship_cloaking_detection_add = 2
+		shipclass_starbase_hull_mult = 1
+		shipclass_starbase_armor_mult = 1
+		shipsize_military_station_small_hull_mult = 1
+	}
+}
+
+civic_SVE_spacedefense = {
+	#星际防守
+	#效果：：免除人口强制迁移的凝聚力花费
+	description = civic_corvee_system_effects
+	potential = {
+		always = yes
+	}
+	possible = {
+		NOT = {
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+	random_weight = {
+		base = 0
+	}
+	ai_weight = {
+		factor = 0
+	}
+	modifier = {
+		ship_orbit_upkeep_mult = -0.9		#驻港舰船维护费-90%
+		starbases_upkeep_mult = -0.9		#恒星基地维护费-90%
+		ship_cloaking_detection_add = 6		#隐形舰船探测强度+6
+		planet_structures_upkeep_mult = -0.9		#建筑与区划维护费-90%
+		starbase_building_build_speed_mult = 1		#恒星基地建造速度+100%
+		starbase_module_build_speed_mult = 1		#恒星基地模块建造速度+100%
+		country_starbase_capacity_mult = 1		#恒星基地容量+100%
+		shipclass_starbase_hull_mult = 1		#恒星基地船体值+100%
+		shipclass_starbase_armor_mult = 1		#恒星基地装甲值+100%
+		shipclass_starbase_armor_hardening_add = 1		#恒星基地装甲硬化+100%
+		shipsize_military_station_small_build_speed_mult = 1		#防御平台建造速度+100%
+		shipsize_military_station_small_hull_mult = 1		#防御平台船体值+100%
+		ship_military_station_small_cost_mult = -0.4		#防御平台建造花费-40%
+		starbase_defense_platform_capacity_add = 8		#防御平台上限+8
+		country_unity_produces_mult = 5		#全国凝聚力产出+500%
+		pop_government_ethic_attraction = 0.5		#主流思潮吸引力+50%
+		country_resource_max_add = -400000
+		planet_jobs_produces_mult = -0.5		#全岗位产出-50%
+		all_technology_research_speed = -0.5
+		planet_pop_assembly_mult = -0.5		#星球人口组装速度-50%
+		leaders_upkeep_mult = 0.5
+	}
+}
+
+civic_SVE_penetrate = {
+	#穿透性概念
+	potential = {
+		always = yes
+	}
+	possible = {
+		#不是格式塔
+		is_gestalt = no
+		NOT = {
+			has_ethic = ethic_spiritualist
+		}
+		NOT = {
+			has_ethic = ethic_fanatic_spiritualist
+		}
+		#没有国民理念：寻乐者
+		NOT = {
+			has_civic = civic_pleasure_seekers
+		}
+		#没有国民理念：企业享乐主义
+		NOT = {
+			has_civic = civic_corporate_hedonism
+		}
+		#没有国民理念：压迫性独裁
+		NOT = {
+			has_civic = civic_oppressive_autocracy
+		}
+	}
+	random_weight = {
+		base = 0
+	}
+	ai_weight = {
+		factor = 0
+	}
+	modifier = {
+		ship_shield_penetration_add = 3.24		#+324%护盾穿透
+		#damage_vs_shield = -0.6		#-60%护盾伤害
+		ship_armor_penetration_add = 3.24		#+324%装甲穿透
+		#damage_vs_armor = -0.6		#-60%装甲伤害
+		#damage_vs_hull = -0.5		#-50%船体伤害
+		scientist_exp_gain = -0.25		#科学官的经验获取-25%
+		planet_researchers_upkeep_mult = 0.1		#研究人员的维护费+10%
+	}
+}
